@@ -1,0 +1,24 @@
+module DemoApiScalarGalaxy
+  module Models
+    type planet_delete_params =
+      { planet_id: Integer }
+      & DemoApiScalarGalaxy::Internal::Type::request_parameters
+
+    class PlanetDeleteParams < DemoApiScalarGalaxy::Internal::Type::BaseModel
+      extend DemoApiScalarGalaxy::Internal::Type::RequestParameters::Converter
+      include DemoApiScalarGalaxy::Internal::Type::RequestParameters
+
+      attr_accessor planet_id: Integer
+
+      def initialize: (
+        planet_id: Integer,
+        ?request_options: DemoApiScalarGalaxy::request_opts
+      ) -> void
+
+      def to_hash: -> {
+        planet_id: Integer,
+        request_options: DemoApiScalarGalaxy::RequestOptions
+      }
+    end
+  end
+end

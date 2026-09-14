@@ -1,0 +1,13 @@
+module DemoApiScalarGalaxy
+  module Resources
+    class Webhooks
+      def unwrap: (
+        String payload,
+        headers: ::Hash[String, String],
+        ?key: String?
+      ) -> DemoApiScalarGalaxy::NewPlanetWebhookEvent
+
+      def initialize: (client: DemoApiScalarGalaxy::Client) -> void
+    end
+  end
+end

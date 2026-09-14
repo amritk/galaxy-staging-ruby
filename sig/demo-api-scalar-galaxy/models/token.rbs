@@ -1,0 +1,15 @@
+module DemoApiScalarGalaxy
+  module Models
+    type token = { token: String }
+
+    class Token < DemoApiScalarGalaxy::Internal::Type::BaseModel
+      attr_reader token: String?
+
+      def token=: (String) -> String
+
+      def initialize: (?token: String) -> void
+
+      def to_hash: -> { token: String }
+    end
+  end
+end

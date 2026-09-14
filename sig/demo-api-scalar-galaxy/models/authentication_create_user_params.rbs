@@ -1,0 +1,34 @@
+module DemoApiScalarGalaxy
+  module Models
+    type authentication_create_user_params =
+      { email: String, password: String, name: String }
+      & DemoApiScalarGalaxy::Internal::Type::request_parameters
+
+    class AuthenticationCreateUserParams < DemoApiScalarGalaxy::Internal::Type::BaseModel
+      extend DemoApiScalarGalaxy::Internal::Type::RequestParameters::Converter
+      include DemoApiScalarGalaxy::Internal::Type::RequestParameters
+
+      attr_accessor email: String
+
+      attr_accessor password: String
+
+      attr_reader name: String?
+
+      def name=: (String) -> String
+
+      def initialize: (
+        email: String,
+        password: String,
+        ?name: String,
+        ?request_options: DemoApiScalarGalaxy::request_opts
+      ) -> void
+
+      def to_hash: -> {
+        email: String,
+        password: String,
+        name: String,
+        request_options: DemoApiScalarGalaxy::RequestOptions
+      }
+    end
+  end
+end

@@ -1,0 +1,9 @@
+module DemoApiScalarGalaxy
+  module Internal
+    extend DemoApiScalarGalaxy::Internal::Util::SorbetRuntimeSupport
+
+    type file_input = Pathname | StringIO | IO | String | DemoApiScalarGalaxy::FilePart
+
+    OMIT: Object
+  end
+end

@@ -1,0 +1,53 @@
+module DemoApiScalarGalaxy
+  module Models
+    type paginated_resource =
+      { meta: DemoApiScalarGalaxy::PaginatedResource::Meta }
+
+    class PaginatedResource < DemoApiScalarGalaxy::Internal::Type::BaseModel
+      attr_reader meta: DemoApiScalarGalaxy::PaginatedResource::Meta?
+
+      def meta=: (
+        DemoApiScalarGalaxy::PaginatedResource::Meta
+      ) -> DemoApiScalarGalaxy::PaginatedResource::Meta
+
+      def initialize: (
+        ?meta: DemoApiScalarGalaxy::PaginatedResource::Meta
+      ) -> void
+
+      def to_hash: -> { meta: DemoApiScalarGalaxy::PaginatedResource::Meta }
+
+      type meta =
+        { limit: Integer, next_: String?, offset: Integer, total: Integer }
+
+      class Meta < DemoApiScalarGalaxy::Internal::Type::BaseModel
+        attr_reader limit: Integer?
+
+        def limit=: (Integer) -> Integer
+
+        attr_accessor next_: String?
+
+        attr_reader offset: Integer?
+
+        def offset=: (Integer) -> Integer
+
+        attr_reader total: Integer?
+
+        def total=: (Integer) -> Integer
+
+        def initialize: (
+          ?limit: Integer,
+          ?next_: String?,
+          ?offset: Integer,
+          ?total: Integer
+        ) -> void
+
+        def to_hash: -> {
+          limit: Integer,
+          next_: String?,
+          offset: Integer,
+          total: Integer
+        }
+      end
+    end
+  end
+end

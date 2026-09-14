@@ -1,0 +1,17 @@
+module DemoApiScalarGalaxy
+  module Models
+    type planet_list_response = { data: ::Array[DemoApiScalarGalaxy::Planet] }
+
+    class PlanetListResponse < DemoApiScalarGalaxy::Models::PaginatedResource
+      def data: -> ::Array[DemoApiScalarGalaxy::Planet]?
+
+      def data=: (
+        ::Array[DemoApiScalarGalaxy::Planet] _
+      ) -> ::Array[DemoApiScalarGalaxy::Planet]
+
+      def initialize: (?data: ::Array[DemoApiScalarGalaxy::Planet]) -> void
+
+      def to_hash: -> { data: ::Array[DemoApiScalarGalaxy::Planet] }
+    end
+  end
+end

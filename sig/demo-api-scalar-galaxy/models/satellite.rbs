@@ -1,0 +1,95 @@
+module DemoApiScalarGalaxy
+  module Models
+    type satellite =
+      {
+        name: String,
+        type: DemoApiScalarGalaxy::Models::Satellite::type_,
+        id: Integer,
+        description: String?,
+        diameter: Float,
+        orbit: DemoApiScalarGalaxy::Satellite::Orbit
+      }
+
+    class Satellite < DemoApiScalarGalaxy::Internal::Type::BaseModel
+      attr_accessor name: String
+
+      attr_accessor type: DemoApiScalarGalaxy::Models::Satellite::type_
+
+      attr_reader id: Integer?
+
+      def id=: (Integer) -> Integer
+
+      attr_accessor description: String?
+
+      attr_reader diameter: Float?
+
+      def diameter=: (Float) -> Float
+
+      attr_reader orbit: DemoApiScalarGalaxy::Satellite::Orbit?
+
+      def orbit=: (
+        DemoApiScalarGalaxy::Satellite::Orbit
+      ) -> DemoApiScalarGalaxy::Satellite::Orbit
+
+      def initialize: (
+        name: String,
+        type: DemoApiScalarGalaxy::Models::Satellite::type_,
+        ?id: Integer,
+        ?description: String?,
+        ?diameter: Float,
+        ?orbit: DemoApiScalarGalaxy::Satellite::Orbit
+      ) -> void
+
+      def to_hash: -> {
+        name: String,
+        type: DemoApiScalarGalaxy::Models::Satellite::type_,
+        id: Integer,
+        description: String?,
+        diameter: Float,
+        orbit: DemoApiScalarGalaxy::Satellite::Orbit
+      }
+
+      type type_ = :satellite | :moon | :asteroid | :comet
+
+      module Type
+        extend DemoApiScalarGalaxy::Internal::Type::Enum
+
+        SATELLITE: :satellite
+        MOON: :moon
+        ASTEROID: :asteroid
+        COMET: :comet
+
+        def self?.values: -> ::Array[DemoApiScalarGalaxy::Models::Satellite::type_]
+      end
+
+      type orbit =
+        { distance: Float, orbital_period: Float, planet_id: Integer }
+
+      class Orbit < DemoApiScalarGalaxy::Internal::Type::BaseModel
+        attr_reader distance: Float?
+
+        def distance=: (Float) -> Float
+
+        attr_reader orbital_period: Float?
+
+        def orbital_period=: (Float) -> Float
+
+        attr_reader planet_id: Integer?
+
+        def planet_id=: (Integer) -> Integer
+
+        def initialize: (
+          ?distance: Float,
+          ?orbital_period: Float,
+          ?planet_id: Integer
+        ) -> void
+
+        def to_hash: -> {
+          distance: Float,
+          orbital_period: Float,
+          planet_id: Integer
+        }
+      end
+    end
+  end
+end

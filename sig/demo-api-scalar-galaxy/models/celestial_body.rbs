@@ -1,0 +1,12 @@
+module DemoApiScalarGalaxy
+  module Models
+    type celestial_body =
+      DemoApiScalarGalaxy::Planet | DemoApiScalarGalaxy::Satellite
+
+    module CelestialBody
+      extend DemoApiScalarGalaxy::Internal::Type::Union
+
+      def self?.variants: -> ::Array[DemoApiScalarGalaxy::Models::celestial_body]
+    end
+  end
+end

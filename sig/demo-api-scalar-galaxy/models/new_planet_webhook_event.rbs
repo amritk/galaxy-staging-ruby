@@ -1,0 +1,11 @@
+module DemoApiScalarGalaxy
+  module Models
+    type new_planet_webhook_event = {  }
+
+    class NewPlanetWebhookEvent < DemoApiScalarGalaxy::Internal::Type::BaseModel
+      def initialize: -> void
+
+      def to_hash: -> {  }
+    end
+  end
+end

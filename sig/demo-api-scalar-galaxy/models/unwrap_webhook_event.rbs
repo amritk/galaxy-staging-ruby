@@ -1,0 +1,11 @@
+module DemoApiScalarGalaxy
+  module Models
+    type unwrap_webhook_event = DemoApiScalarGalaxy::NewPlanetWebhookEvent
+
+    module UnwrapWebhookEvent
+      extend DemoApiScalarGalaxy::Internal::Type::Union
+
+      def self?.variants: -> ::Array[DemoApiScalarGalaxy::Models::unwrap_webhook_event]
+    end
+  end
+end

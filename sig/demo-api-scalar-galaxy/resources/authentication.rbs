@@ -1,0 +1,24 @@
+module DemoApiScalarGalaxy
+  module Resources
+    class Authentication
+      def create_token: (
+        email: String,
+        password: String,
+        ?request_options: DemoApiScalarGalaxy::request_opts
+      ) -> DemoApiScalarGalaxy::Token
+
+      def create_user: (
+        email: String,
+        password: String,
+        ?name: String,
+        ?request_options: DemoApiScalarGalaxy::request_opts
+      ) -> DemoApiScalarGalaxy::User
+
+      def list_me: (
+        ?request_options: DemoApiScalarGalaxy::request_opts
+      ) -> DemoApiScalarGalaxy::User
+
+      def initialize: (client: DemoApiScalarGalaxy::Client) -> void
+    end
+  end
+end

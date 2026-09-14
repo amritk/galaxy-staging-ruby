@@ -1,0 +1,3 @@
+module DemoApiScalarGalaxy
+  VERSION: String
+end

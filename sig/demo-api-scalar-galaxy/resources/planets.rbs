@@ -1,0 +1,68 @@
+module DemoApiScalarGalaxy
+  module Resources
+    class Planets
+      def create: (
+        id: Integer,
+        name: String,
+        type: DemoApiScalarGalaxy::Models::Planet::type_,
+        ?atmosphere: ::Array[DemoApiScalarGalaxy::Planet::Atmosphere],
+        ?creator: DemoApiScalarGalaxy::User,
+        ?description: String?,
+        ?discovered_at: Time,
+        ?failure_callback_url: String,
+        ?habitability_index: Float,
+        ?image: String?,
+        ?last_updated: Time,
+        ?physical_properties: DemoApiScalarGalaxy::Planet::PhysicalProperties,
+        ?satellites: ::Array[DemoApiScalarGalaxy::Satellite],
+        ?success_callback_url: String,
+        ?tags: ::Array[String],
+        ?request_options: DemoApiScalarGalaxy::request_opts
+      ) -> DemoApiScalarGalaxy::Planet
+
+      def retrieve: (
+        Integer planet_id,
+        ?request_options: DemoApiScalarGalaxy::request_opts
+      ) -> DemoApiScalarGalaxy::Planet
+
+      def update: (
+        Integer planet_id,
+        id: Integer,
+        name: String,
+        type: DemoApiScalarGalaxy::Models::Planet::type_,
+        ?atmosphere: ::Array[DemoApiScalarGalaxy::Planet::Atmosphere],
+        ?creator: DemoApiScalarGalaxy::User,
+        ?description: String?,
+        ?discovered_at: Time,
+        ?failure_callback_url: String,
+        ?habitability_index: Float,
+        ?image: String?,
+        ?last_updated: Time,
+        ?physical_properties: DemoApiScalarGalaxy::Planet::PhysicalProperties,
+        ?satellites: ::Array[DemoApiScalarGalaxy::Satellite],
+        ?success_callback_url: String,
+        ?tags: ::Array[String],
+        ?request_options: DemoApiScalarGalaxy::request_opts
+      ) -> DemoApiScalarGalaxy::Planet
+
+      def list: (
+        ?limit: Integer,
+        ?offset: Integer,
+        ?request_options: DemoApiScalarGalaxy::request_opts
+      ) -> DemoApiScalarGalaxy::Models::PlanetListResponse
+
+      def delete: (
+        Integer planet_id,
+        ?request_options: DemoApiScalarGalaxy::request_opts
+      ) -> nil
+
+      def upload_image: (
+        Integer planet_id,
+        ?image: DemoApiScalarGalaxy::Internal::file_input,
+        ?request_options: DemoApiScalarGalaxy::request_opts
+      ) -> DemoApiScalarGalaxy::Models::PlanetUploadImageResponse
+
+      def initialize: (client: DemoApiScalarGalaxy::Client) -> void
+    end
+  end
+end

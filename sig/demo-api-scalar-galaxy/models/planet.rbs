@@ -1,0 +1,210 @@
+module DemoApiScalarGalaxy
+  module Models
+    type planet =
+      {
+        id: Integer,
+        name: String,
+        type: DemoApiScalarGalaxy::Models::Planet::type_,
+        atmosphere: ::Array[DemoApiScalarGalaxy::Planet::Atmosphere],
+        creator: DemoApiScalarGalaxy::User,
+        description: String?,
+        discovered_at: Time,
+        failure_callback_url: String,
+        habitability_index: Float,
+        image: String?,
+        last_updated: Time,
+        physical_properties: DemoApiScalarGalaxy::Planet::PhysicalProperties,
+        satellites: ::Array[DemoApiScalarGalaxy::Satellite],
+        success_callback_url: String,
+        tags: ::Array[String]
+      }
+
+    class Planet < DemoApiScalarGalaxy::Internal::Type::BaseModel
+      attr_accessor id: Integer
+
+      attr_accessor name: String
+
+      attr_accessor type: DemoApiScalarGalaxy::Models::Planet::type_
+
+      attr_reader atmosphere: ::Array[DemoApiScalarGalaxy::Planet::Atmosphere]?
+
+      def atmosphere=: (
+        ::Array[DemoApiScalarGalaxy::Planet::Atmosphere]
+      ) -> ::Array[DemoApiScalarGalaxy::Planet::Atmosphere]
+
+      attr_reader creator: DemoApiScalarGalaxy::User?
+
+      def creator=: (DemoApiScalarGalaxy::User) -> DemoApiScalarGalaxy::User
+
+      attr_accessor description: String?
+
+      attr_reader discovered_at: Time?
+
+      def discovered_at=: (Time) -> Time
+
+      attr_reader failure_callback_url: String?
+
+      def failure_callback_url=: (String) -> String
+
+      attr_reader habitability_index: Float?
+
+      def habitability_index=: (Float) -> Float
+
+      attr_accessor image: String?
+
+      attr_reader last_updated: Time?
+
+      def last_updated=: (Time) -> Time
+
+      attr_reader physical_properties: DemoApiScalarGalaxy::Planet::PhysicalProperties?
+
+      def physical_properties=: (
+        DemoApiScalarGalaxy::Planet::PhysicalProperties
+      ) -> DemoApiScalarGalaxy::Planet::PhysicalProperties
+
+      attr_reader satellites: ::Array[DemoApiScalarGalaxy::Satellite]?
+
+      def satellites=: (
+        ::Array[DemoApiScalarGalaxy::Satellite]
+      ) -> ::Array[DemoApiScalarGalaxy::Satellite]
+
+      attr_reader success_callback_url: String?
+
+      def success_callback_url=: (String) -> String
+
+      attr_reader tags: ::Array[String]?
+
+      def tags=: (::Array[String]) -> ::Array[String]
+
+      def initialize: (
+        id: Integer,
+        name: String,
+        type: DemoApiScalarGalaxy::Models::Planet::type_,
+        ?atmosphere: ::Array[DemoApiScalarGalaxy::Planet::Atmosphere],
+        ?creator: DemoApiScalarGalaxy::User,
+        ?description: String?,
+        ?discovered_at: Time,
+        ?failure_callback_url: String,
+        ?habitability_index: Float,
+        ?image: String?,
+        ?last_updated: Time,
+        ?physical_properties: DemoApiScalarGalaxy::Planet::PhysicalProperties,
+        ?satellites: ::Array[DemoApiScalarGalaxy::Satellite],
+        ?success_callback_url: String,
+        ?tags: ::Array[String]
+      ) -> void
+
+      def to_hash: -> {
+        id: Integer,
+        name: String,
+        type: DemoApiScalarGalaxy::Models::Planet::type_,
+        atmosphere: ::Array[DemoApiScalarGalaxy::Planet::Atmosphere],
+        creator: DemoApiScalarGalaxy::User,
+        description: String?,
+        discovered_at: Time,
+        failure_callback_url: String,
+        habitability_index: Float,
+        image: String?,
+        last_updated: Time,
+        physical_properties: DemoApiScalarGalaxy::Planet::PhysicalProperties,
+        satellites: ::Array[DemoApiScalarGalaxy::Satellite],
+        success_callback_url: String,
+        tags: ::Array[String]
+      }
+
+      type type_ =
+        :planet | :terrestrial | :gas_giant | :ice_giant | :dwarf | :super_earth
+
+      module Type
+        extend DemoApiScalarGalaxy::Internal::Type::Enum
+
+        PLANET: :planet
+        TERRESTRIAL: :terrestrial
+        GAS_GIANT: :gas_giant
+        ICE_GIANT: :ice_giant
+        DWARF: :dwarf
+        SUPER_EARTH: :super_earth
+
+        def self?.values: -> ::Array[DemoApiScalarGalaxy::Models::Planet::type_]
+      end
+
+      type atmosphere = { compound: String, percentage: Float }
+
+      class Atmosphere < DemoApiScalarGalaxy::Internal::Type::BaseModel
+        attr_reader compound: String?
+
+        def compound=: (String) -> String
+
+        attr_reader percentage: Float?
+
+        def percentage=: (Float) -> Float
+
+        def initialize: (?compound: String, ?percentage: Float) -> void
+
+        def to_hash: -> { compound: String, percentage: Float }
+      end
+
+      type physical_properties =
+        {
+          gravity: Float,
+          mass: Float,
+          radius: Float,
+          temperature: DemoApiScalarGalaxy::Planet::PhysicalProperties::Temperature
+        }
+
+      class PhysicalProperties < DemoApiScalarGalaxy::Internal::Type::BaseModel
+        attr_reader gravity: Float?
+
+        def gravity=: (Float) -> Float
+
+        attr_reader mass: Float?
+
+        def mass=: (Float) -> Float
+
+        attr_reader radius: Float?
+
+        def radius=: (Float) -> Float
+
+        attr_reader temperature: DemoApiScalarGalaxy::Planet::PhysicalProperties::Temperature?
+
+        def temperature=: (
+          DemoApiScalarGalaxy::Planet::PhysicalProperties::Temperature
+        ) -> DemoApiScalarGalaxy::Planet::PhysicalProperties::Temperature
+
+        def initialize: (
+          ?gravity: Float,
+          ?mass: Float,
+          ?radius: Float,
+          ?temperature: DemoApiScalarGalaxy::Planet::PhysicalProperties::Temperature
+        ) -> void
+
+        def to_hash: -> {
+          gravity: Float,
+          mass: Float,
+          radius: Float,
+          temperature: DemoApiScalarGalaxy::Planet::PhysicalProperties::Temperature
+        }
+
+        type temperature = { average: Float, max: Float, min: Float }
+
+        class Temperature < DemoApiScalarGalaxy::Internal::Type::BaseModel
+          attr_reader average: Float?
+
+          def average=: (Float) -> Float
+
+          attr_reader max: Float?
+
+          def max=: (Float) -> Float
+
+          attr_reader min: Float?
+
+          def min=: (Float) -> Float
+
+          def initialize: (?average: Float, ?max: Float, ?min: Float) -> void
+
+          def to_hash: -> { average: Float, max: Float, min: Float }
+        end
+      end
+    end
+  end
+end

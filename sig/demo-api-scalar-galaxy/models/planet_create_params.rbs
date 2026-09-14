@@ -1,0 +1,17 @@
+module DemoApiScalarGalaxy
+  module Models
+    type planet_create_params =
+      {  } & DemoApiScalarGalaxy::Internal::Type::request_parameters
+
+    class PlanetCreateParams < DemoApiScalarGalaxy::Models::Planet
+      extend DemoApiScalarGalaxy::Internal::Type::RequestParameters::Converter
+      include DemoApiScalarGalaxy::Internal::Type::RequestParameters
+
+      def initialize: (
+        ?request_options: DemoApiScalarGalaxy::request_opts
+      ) -> void
+
+      def to_hash: -> { request_options: DemoApiScalarGalaxy::RequestOptions }
+    end
+  end
+end

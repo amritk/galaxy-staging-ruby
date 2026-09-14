@@ -1,0 +1,39 @@
+module DemoApiScalarGalaxy
+  class AuthenticationCreateTokenParams = DemoApiScalarGalaxy::Models::AuthenticationCreateTokenParams
+
+  class AuthenticationCreateUserParams = DemoApiScalarGalaxy::Models::AuthenticationCreateUserParams
+
+  class AuthenticationListMeParams = DemoApiScalarGalaxy::Models::AuthenticationListMeParams
+
+  module CelestialBody = DemoApiScalarGalaxy::Models::CelestialBody
+
+  class CelestialBodyCreateParams = DemoApiScalarGalaxy::Models::CelestialBodyCreateParams
+
+  class NewPlanetWebhookEvent = DemoApiScalarGalaxy::Models::NewPlanetWebhookEvent
+
+  class PaginatedResource = DemoApiScalarGalaxy::Models::PaginatedResource
+
+  class Planet = DemoApiScalarGalaxy::Models::Planet
+
+  class PlanetCreateParams = DemoApiScalarGalaxy::Models::PlanetCreateParams
+
+  class PlanetDeleteParams = DemoApiScalarGalaxy::Models::PlanetDeleteParams
+
+  class PlanetListParams = DemoApiScalarGalaxy::Models::PlanetListParams
+
+  class PlanetRetrieveParams = DemoApiScalarGalaxy::Models::PlanetRetrieveParams
+
+  class PlanetUpdateParams = DemoApiScalarGalaxy::Models::PlanetUpdateParams
+
+  class PlanetUploadImageParams = DemoApiScalarGalaxy::Models::PlanetUploadImageParams
+
+  class Satellite = DemoApiScalarGalaxy::Models::Satellite
+
+  class Token = DemoApiScalarGalaxy::Models::Token
+
+  module UnwrapWebhookEvent = DemoApiScalarGalaxy::Models::UnwrapWebhookEvent
+
+  class User = DemoApiScalarGalaxy::Models::User
+
+  class WebhookUnwrapParams = DemoApiScalarGalaxy::Models::WebhookUnwrapParams
+end

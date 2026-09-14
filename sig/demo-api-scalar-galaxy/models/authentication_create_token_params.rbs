@@ -1,0 +1,28 @@
+module DemoApiScalarGalaxy
+  module Models
+    type authentication_create_token_params =
+      { email: String, password: String }
+      & DemoApiScalarGalaxy::Internal::Type::request_parameters
+
+    class AuthenticationCreateTokenParams < DemoApiScalarGalaxy::Internal::Type::BaseModel
+      extend DemoApiScalarGalaxy::Internal::Type::RequestParameters::Converter
+      include DemoApiScalarGalaxy::Internal::Type::RequestParameters
+
+      attr_accessor email: String
+
+      attr_accessor password: String
+
+      def initialize: (
+        email: String,
+        password: String,
+        ?request_options: DemoApiScalarGalaxy::request_opts
+      ) -> void
+
+      def to_hash: -> {
+        email: String,
+        password: String,
+        request_options: DemoApiScalarGalaxy::RequestOptions
+      }
+    end
+  end
+end
