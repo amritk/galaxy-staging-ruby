@@ -1,14 +1,17 @@
 # frozen_string_literal: true
 
-require_relative "lib/demo-api-scalar-galaxy/version"
+require_relative "lib/amritk-galaxy-staging/version"
 
 Gem::Specification.new do |spec|
-  spec.name = "demo-api-scalar-galaxy"
+  spec.name = "amritk-galaxy-staging"
   spec.version = DemoApiScalarGalaxy::VERSION
   spec.summary = "Ruby library to access the Demo API (Scalar Galaxy)"
   spec.authors = ["Demo API (Scalar Galaxy)"]
   spec.license = "Apache-2.0"
+  spec.homepage = "https://github.com/amritk/galaxy-staging-ruby"
   spec.metadata = {
+    "homepage_uri" => "https://github.com/amritk/galaxy-staging-ruby",
+    "source_code_uri" => "https://github.com/amritk/galaxy-staging-ruby",
     "rubygems_mfa_required" => "false"
   }
   spec.files = Dir[

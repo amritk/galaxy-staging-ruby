@@ -26,7 +26,7 @@ Files under `examples/` are never modified by the generator.
 #!/usr/bin/env ruby
 # frozen_string_literal: true
 
-require_relative "../lib/demo-api-scalar-galaxy"
+require_relative "../lib/amritk-galaxy-staging"
 
 # ...
 ```
@@ -40,13 +40,13 @@ $ ruby ./examples/<your-example>.rb
 To install from git in your `Gemfile`:
 
 ```ruby
-gem "demo-api-scalar-galaxy", git: "<repository url>"
+gem "amritk-galaxy-staging", git: "<repository url>"
 ```
 
 Or reference a local checkout:
 
 ```ruby
-gem "demo-api-scalar-galaxy", path: "/path/to/demo-api-scalar-galaxy"
+gem "amritk-galaxy-staging", path: "/path/to/amritk-galaxy-staging"
 ```
 
 ## Linting, formatting, and typechecking

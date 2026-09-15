@@ -7,14 +7,14 @@ require "time"
 
 root =
   (
-    if File.exist?(File.join(__dir__, "lib", "demo-api-scalar-galaxy.rb"))
+    if File.exist?(File.join(__dir__, "lib", "amritk-galaxy-staging.rb"))
       __dir__
     else
       File.expand_path("..", __dir__)
     end
   )
 $LOAD_PATH.unshift(File.join(root, "lib"))
-require "demo-api-scalar-galaxy"
+require "amritk-galaxy-staging"
 
 # Smoke test: calls every generated operation once to confirm the SDK can reach each endpoint.
 # Run it from this repo with `ruby tests/smoke-test.rb`. The generator also runs this file

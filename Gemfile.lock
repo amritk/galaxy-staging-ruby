@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    demo-api-scalar-galaxy (0.1.0)
+    amritk-galaxy-staging (0.2.0)
       base64
       cgi
       connection_pool
@@ -149,7 +149,7 @@ PLATFORMS
   x86_64-linux-musl
 
 DEPENDENCIES
-  demo-api-scalar-galaxy!
+  amritk-galaxy-staging!
   rake
   rbs
   redcarpet

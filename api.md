@@ -21,7 +21,7 @@ Complete reference of every operation, grouped by resource. See [the README](./R
 ## Setup
 
 ```ruby
-require "demo-api-scalar-galaxy"
+require "amritk-galaxy-staging"
 
 client = DemoApiScalarGalaxy::Client.new(
   bearer_auth: ENV["BEARER_AUTH"], # defaults to the BEARER_AUTH env var
@@ -38,8 +38,8 @@ It's easy to say you know them all, but do you really? Retrieve all the planets 
 
 | Direction | Type |
 | --- | --- |
-| Request | [`PlanetListParams`](././lib/demo-api-scalar-galaxy/models/planet_list_params.rb) |
-| Response | [`PlanetListResponse`](././lib/demo-api-scalar-galaxy/models/planet_list_response.rb) |
+| Request | [`PlanetListParams`](././lib/amritk-galaxy-staging/models/planet_list_params.rb) |
+| Response | [`PlanetListResponse`](././lib/amritk-galaxy-staging/models/planet_list_response.rb) |
 
 ```ruby
 response = client.planets.list({ limit: 10, offset: 0 })
@@ -53,8 +53,8 @@ Time to play god and create a new planet. What do you think? Ah, don't think too
 
 | Direction | Type |
 | --- | --- |
-| Request | [`PlanetCreateParams`](././lib/demo-api-scalar-galaxy/models/planet_create_params.rb) |
-| Response | [`Planet`](././lib/demo-api-scalar-galaxy/models/planet.rb) |
+| Request | [`PlanetCreateParams`](././lib/amritk-galaxy-staging/models/planet_create_params.rb) |
+| Response | [`Planet`](././lib/amritk-galaxy-staging/models/planet.rb) |
 
 ```ruby
 response = client.planets.create({ id: 1, name: "Mars", type: "terrestrial", atmosphere: [{  }], creator: {  }, description: "The red planet", discovered_at: "1610-01-07T00:00:00Z", failure_callback_url: "https://example.com/webhook", habitability_index: 0.68, image: "https://cdn.scalar.com/photos/mars.jpg", last_updated: "2024-01-15T14:30:00Z", physical_properties: {  }, satellites: [{ "name" => "Phobos", "type" => "moon" }], success_callback_url: "https://example.com/webhook", tags: [""] })
@@ -68,8 +68,8 @@ You'll better learn a little bit more about the planets. It might come in handy 
 
 | Direction | Type |
 | --- | --- |
-| Request | [`PlanetRetrieveParams`](././lib/demo-api-scalar-galaxy/models/planet_retrieve_params.rb) |
-| Response | [`Planet`](././lib/demo-api-scalar-galaxy/models/planet.rb) |
+| Request | [`PlanetRetrieveParams`](././lib/amritk-galaxy-staging/models/planet_retrieve_params.rb) |
+| Response | [`Planet`](././lib/amritk-galaxy-staging/models/planet.rb) |
 
 ```ruby
 response = client.planets.retrieve(1)
@@ -83,8 +83,8 @@ Sometimes you make mistakes, that's fine. No worries, you can update all planets
 
 | Direction | Type |
 | --- | --- |
-| Request | [`PlanetUpdateParams`](././lib/demo-api-scalar-galaxy/models/planet_update_params.rb) |
-| Response | [`Planet`](././lib/demo-api-scalar-galaxy/models/planet.rb) |
+| Request | [`PlanetUpdateParams`](././lib/amritk-galaxy-staging/models/planet_update_params.rb) |
+| Response | [`Planet`](././lib/amritk-galaxy-staging/models/planet.rb) |
 
 ```ruby
 response = client.planets.update(1, { id: 1, name: "Mars", type: "terrestrial", atmosphere: [{  }], creator: {  }, description: "The red planet", discovered_at: "1610-01-07T00:00:00Z", failure_callback_url: "https://example.com/webhook", habitability_index: 0.68, image: "https://cdn.scalar.com/photos/mars.jpg", last_updated: "2024-01-15T14:30:00Z", physical_properties: {  }, satellites: [{ "name" => "Phobos", "type" => "moon" }], success_callback_url: "https://example.com/webhook", tags: [""] })
@@ -98,7 +98,7 @@ This endpoint was used to delete planets. Unfortunately, that caused a lot of tr
 
 | Direction | Type |
 | --- | --- |
-| Request | [`PlanetDeleteParams`](././lib/demo-api-scalar-galaxy/models/planet_delete_params.rb) |
+| Request | [`PlanetDeleteParams`](././lib/amritk-galaxy-staging/models/planet_delete_params.rb) |
 
 ```ruby
 client.planets.delete(1)
@@ -110,8 +110,8 @@ Got a crazy good photo of a planet? Share it with the world!
 
 | Direction | Type |
 | --- | --- |
-| Request | [`PlanetUploadImageParams`](././lib/demo-api-scalar-galaxy/models/planet_upload_image_params.rb) |
-| Response | [`PlanetUploadImageResponse`](././lib/demo-api-scalar-galaxy/models/planet_upload_image_response.rb) |
+| Request | [`PlanetUploadImageParams`](././lib/amritk-galaxy-staging/models/planet_upload_image_params.rb) |
+| Response | [`PlanetUploadImageResponse`](././lib/amritk-galaxy-staging/models/planet_upload_image_response.rb) |
 
 ```ruby
 response = client.planets.upload_image(1, { image: "@mars.jpg" })
@@ -127,8 +127,8 @@ Celestial bodies are the planets and satellites in the Scalar Galaxy.
 
 | Direction | Type |
 | --- | --- |
-| Request | [`CelestialBodyCreateParams`](././lib/demo-api-scalar-galaxy/models/celestial_body_create_params.rb) |
-| Response | [`CelestialBody`](././lib/demo-api-scalar-galaxy/models/celestial_body.rb) |
+| Request | [`CelestialBodyCreateParams`](././lib/amritk-galaxy-staging/models/celestial_body_create_params.rb) |
+| Response | [`CelestialBody`](././lib/amritk-galaxy-staging/models/celestial_body.rb) |
 
 ```ruby
 response = client.celestial_bodies.create({ celestial_body: { "name" => "Mars", "type" => "terrestrial" } })
@@ -146,8 +146,8 @@ Time to create a user account, eh?
 
 | Direction | Type |
 | --- | --- |
-| Request | [`AuthenticationCreateUserParams`](././lib/demo-api-scalar-galaxy/models/authentication_create_user_params.rb) |
-| Response | [`User`](././lib/demo-api-scalar-galaxy/models/user.rb) |
+| Request | [`AuthenticationCreateUserParams`](././lib/amritk-galaxy-staging/models/authentication_create_user_params.rb) |
+| Response | [`User`](././lib/amritk-galaxy-staging/models/user.rb) |
 
 ```ruby
 response = client.authentication.create_user({ email: "marc@scalar.com", password: "i-love-scalar", name: "Marc" })
@@ -161,8 +161,8 @@ Yeah, this is the boring security stuff. Just get your super secret token and mo
 
 | Direction | Type |
 | --- | --- |
-| Request | [`AuthenticationCreateTokenParams`](././lib/demo-api-scalar-galaxy/models/authentication_create_token_params.rb) |
-| Response | [`Token`](././lib/demo-api-scalar-galaxy/models/token.rb) |
+| Request | [`AuthenticationCreateTokenParams`](././lib/amritk-galaxy-staging/models/authentication_create_token_params.rb) |
+| Response | [`Token`](././lib/amritk-galaxy-staging/models/token.rb) |
 
 ```ruby
 response = client.authentication.create_token({ email: "marc@scalar.com", password: "i-love-scalar" })
@@ -176,8 +176,8 @@ Find yourself they say. That's what you can do here.
 
 | Direction | Type |
 | --- | --- |
-| Request | [`AuthenticationListMeParams`](././lib/demo-api-scalar-galaxy/models/authentication_list_me_params.rb) |
-| Response | [`User`](././lib/demo-api-scalar-galaxy/models/user.rb) |
+| Request | [`AuthenticationListMeParams`](././lib/amritk-galaxy-staging/models/authentication_list_me_params.rb) |
+| Response | [`User`](././lib/amritk-galaxy-staging/models/user.rb) |
 
 ```ruby
 response = client.authentication.list_me
