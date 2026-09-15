@@ -26,13 +26,13 @@ The full API of this library can be found in [api.md](./api.md).
 Add the gem to your application's `Gemfile`:
 
 ```ruby
-gem "demo-api-scalar-galaxy", "~> 0.1.0" # x-release-please-version
+gem "amritk-galaxy-staging", "~> 0.1.0" # x-release-please-version
 ```
 
 Or install it directly:
 
 ```sh
-gem install demo-api-scalar-galaxy
+gem install amritk-galaxy-staging
 ```
 
 <br />
@@ -40,7 +40,7 @@ gem install demo-api-scalar-galaxy
 ## Usage
 
 ```ruby
-require "demo-api-scalar-galaxy"
+require "amritk-galaxy-staging"
 
 client = DemoApiScalarGalaxy::Client.new(
   bearer_auth: ENV["BEARER_AUTH"], # defaults to the BEARER_AUTH env var
@@ -108,7 +108,7 @@ Documented error statuses: `400`, `401`, `403`, `404`, `409`, `422`.
 Configure the generated client by setting any of these options when you create it.
 
 ```ruby
-require "demo-api-scalar-galaxy"
+require "amritk-galaxy-staging"
 
 client = DemoApiScalarGalaxy::Client.new(
   timeout: 60.0,

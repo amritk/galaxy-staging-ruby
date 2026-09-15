@@ -1,30 +1,30 @@
 ---
 name: demo-api-scalar-galaxy-ruby-sdk
-description: "Ruby SDK for Demo API (Scalar Galaxy). Use when writing Ruby code that calls Demo API (Scalar Galaxy) with the demo-api-scalar-galaxy package: installing it, constructing and authenticating the client, and calling API operations."
+description: "Ruby SDK for Demo API (Scalar Galaxy). Use when writing Ruby code that calls Demo API (Scalar Galaxy) with the amritk-galaxy-staging package: installing it, constructing and authenticating the client, and calling API operations."
 ---
 
 # Demo API (Scalar Galaxy) Ruby SDK
 
-Generated Ruby client for Demo API (Scalar Galaxy), published as `demo-api-scalar-galaxy`. Use the generated client instead of hand-writing HTTP requests.
+Generated Ruby client for Demo API (Scalar Galaxy), published as `amritk-galaxy-staging`. Use the generated client instead of hand-writing HTTP requests.
 
 ## Install
 
 Add the gem to your application's `Gemfile`:
 
 ```ruby
-gem "demo-api-scalar-galaxy", "~> 0.1.0" # x-release-please-version
+gem "amritk-galaxy-staging", "~> 0.1.0" # x-release-please-version
 ```
 
 Or install it directly:
 
 ```sh
-gem install demo-api-scalar-galaxy
+gem install amritk-galaxy-staging
 ```
 
 ## Client setup and authentication
 
 ```ruby
-require "demo-api-scalar-galaxy"
+require "amritk-galaxy-staging"
 
 client = DemoApiScalarGalaxy::Client.new(
   bearer_auth: ENV["BEARER_AUTH"], # defaults to the BEARER_AUTH env var
@@ -45,7 +45,7 @@ Provide credentials using the options below. Environment variables are read auto
 ## Calling operations
 
 ```ruby
-require "demo-api-scalar-galaxy"
+require "amritk-galaxy-staging"
 
 client = DemoApiScalarGalaxy::Client.new(
   bearer_auth: ENV["BEARER_AUTH"], # defaults to the BEARER_AUTH env var
