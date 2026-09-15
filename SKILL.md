@@ -12,7 +12,7 @@ Generated Ruby client for Demo API (Scalar Galaxy), published as `amritk-galaxy-
 Add the gem to your application's `Gemfile`:
 
 ```ruby
-gem "amritk-galaxy-staging", "~> 0.1.0" # x-release-please-version
+gem "amritk-galaxy-staging", "~> 0.2.0" # x-release-please-version
 ```
 
 Or install it directly:
